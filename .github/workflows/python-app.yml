@@ -36,4 +36,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test.py
-        python -m PyInstaller --onefile main.py
+        
+    - name: assembly
+      run: |
+         python -m PyInstaller --onefile main.py
+    - uses: actions/upload-artifact@v3
+      with:
+        name: main.exe
+        path: dist/main.exe 
