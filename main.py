@@ -1,13 +1,13 @@
 from random import randint
 
+
 def knapsack(ws, W):
     dp = [0 for i in range(W + 1)]
     dp[0] = 1
     for cur in ws:
         for w in range(W, cur - 1, -1):
-            if randint(0, 30) != 3:
-                if dp[w - cur]:
-                    dp[w] = 1
+            if dp[w - cur]:
+                dp[w] = 1
     res = []
     for i in range(W):
         if dp[i]:
@@ -20,3 +20,7 @@ def knapsack(ws, W):
 #    print('self.assertEqual(knapsack(', test[0], ',', test[1], '),', knapsack(*test), ')')
 
 
+if __name__ == '__main__':
+    n = int(input('n='))
+    a = list(map(int, input('a=').split()))
+    print(*knapsack(a, max(a) * n))
