@@ -43,4 +43,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: main.exe
-        path: dist/main.exe 
+        path: main.exe 
