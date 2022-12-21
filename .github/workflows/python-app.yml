@@ -36,3 +36,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test.py
+    - uses: Nuitka/Nuitka-Action@v0.4
+      with:
+        script-name: hello_world.py
